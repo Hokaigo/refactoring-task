@@ -25,6 +25,7 @@ namespace ClassLibrary
         public DateTime? CreditDate { get; set; }
 
         private Hashing hashing;
+        private readonly IConfiguration configuration;
 
         public delegate void AccountStateHandler(string msg);
         public event AccountStateHandler Withdrawn;
@@ -47,6 +48,7 @@ namespace ClassLibrary
             Balance = balance;
             CreditDate = creditDate;
             CreditCash = creditCash;
+            this.configuration = configuration;
 
             string key = configuration["Encryption:Key"];
             string iv = configuration["Encryption:IV"];
@@ -68,7 +70,7 @@ namespace ClassLibrary
         {
             Balance += cash;
             if (Added != null) Added($"Ваш рахунок поповнено на {cash}");
-            EmailSender("yourbank25@gmail.com", hashing.Decrypt("asdXuw/7xlkwpp94ACleFUAHh2xr6yWteDegYQaXZl4="), "Поповнення рахунку.",$"Ваш рахунок поповнено на суму {cash}", Email);
+            EmailSender("Поповнення рахунку.", $"Ваш рахунок поповнено на суму {cash}");
         }
 
         public bool Withdraw(int cash)
@@ -77,7 +79,7 @@ namespace ClassLibrary
             {
                 Balance -= cash;
                 if (Withdrawn != null) Withdrawn($"З вашого рахунку знято {cash}");
-                EmailSender("yourbank25@gmail.com", hashing.Decrypt("asdXuw/7xlkwpp94ACleFUAHh2xr6yWteDegYQaXZl4="), "Витрата коштів.", $"З вашого рахунку витрачено {cash}", Email);
+                EmailSender("Витрата коштів.", $"З вашого рахунку витрачено {cash}");
                 return true;
             }
             else
@@ -106,7 +108,7 @@ namespace ClassLibrary
             {
                 CreditCash = cash;
                 Balance += CreditCash;
-                EmailSender("yourbank25@gmail.com", hashing.Decrypt("asdXuw/7xlkwpp94ACleFUAHh2xr6yWteDegYQaXZl4="), "Кредит.", $"Вам було надано кредит у розмірі {CreditCash}", Email);
+                EmailSender("Кредит.", $"Вам було надано кредит у розмірі {CreditCash}");
                 if (Credit != null) Credit($"Вам надано кредит у розмірі {CreditCash}");
 
             }
@@ -148,7 +150,7 @@ namespace ClassLibrary
                 Balance -= CreditCash;
                 atm.PutCashATM(CreditCash);
                 CreditCash = 0;
-                EmailSender("yourbank25@gmail.com", hashing.Decrypt("asdXuw/7xlkwpp94ACleFUAHh2xr6yWteDegYQaXZl4="), "Кредит.", $"Ваш кредит повністю погашений!", Email);
+                EmailSender("Кредит.", $"Ваш кредит повністю погашений!");
                 db.SetDate("dbo.Account", neededAccount.CardNumber, neededAccount.CreditDate);
                 if (Credit != null) Credit("Ваш кредит повністю погашений!");
             }
@@ -157,8 +159,7 @@ namespace ClassLibrary
                 Balance -= cash;
                 atm.PutCashATM(cash);
                 CreditCash -= cash;
-                EmailSender("yourbank25@gmail.com", hashing.Decrypt("asdXuw/7xlkwpp94ACleFUAHh2xr6yWteDegYQaXZl4="), "Кредит.", $"Ваш кредит погашений на {cash}, " +
-                    $"тепер ваш кредит становить {CreditCash}", Email);
+                EmailSender("Кредит.", $"Ваш кредит погашений на {cash}, тепер ваш кредит становить {CreditCash}");
                 if (Credit != null) Credit($"Ваш кредит погашений на {cash}, тепер ваш кредит становить {CreditCash}");
             }
         }
@@ -172,22 +173,27 @@ namespace ClassLibrary
             }
             Balance -= cash;
             account.Balance += cash;
-            EmailSender("yourbank25@gmail.com", hashing.Decrypt("asdXuw/7xlkwpp94ACleFUAHh2xr6yWteDegYQaXZl4="), "Переказ.", $"З вашої карти відбувся грошовий переказ на карту" +
-                $" {account.CardNumber} у розмірі - {cash}", Email);
+            EmailSender("Переказ.", $"З вашої карти відбувся грошовий переказ на карту, {account.CardNumber} у розмірі - {cash}");
             if (Transfered != null) Transfered("Операція проведена успішно");
         }
-        public void EmailSender(string FromEmail, string FromPassword, string Topic, string messageText, string ToEmail)
+
+        private void EmailSender(string topic, string body)
         {
-            var smtpClient = new SmtpClient("smtp.gmail.com")
+            string fromEmail = configuration["EmailSettings:FromEmail"];
+            string fromPassword = hashing.Decrypt(configuration["EmailSettings:FromPassword"]);
+            string smtpServer = configuration["EmailSettings:SmtpServer"];
+            int smtpPort = int.Parse(configuration["EmailSettings:SmtpPort"]);
+
+            var smtpClient = new SmtpClient(smtpServer)
             {
-                Port = 587,
+                Port = smtpPort,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(FromEmail, FromPassword),
+                Credentials = new NetworkCredential(fromEmail, fromPassword),
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network
             };
-            smtpClient.Send(FromEmail, ToEmail, Topic, messageText);
 
+            smtpClient.Send(fromEmail, Email, topic, body);
         }
 
         public bool ChangePassword(string newPassword, DataBase db, Account neededAccount)
@@ -196,16 +202,14 @@ namespace ClassLibrary
             {
                 Password = BCrypt.Net.BCrypt.EnhancedHashPassword(newPassword, 13);
                 db.SetNewPassword("dbo.Account", neededAccount.CardNumber, neededAccount.Password);
-                EmailSender("yourbank25@gmail.com", hashing.Decrypt("asdXuw/7xlkwpp94ACleFUAHh2xr6yWteDegYQaXZl4="), "Безпека!!!", $"Ваш пароль було змінено! Новий пароль: " +
-                    $"{newPassword}", Email);
+                EmailSender("Безпека!!!", $"Ваш пароль було змінено! Новий пароль: {newPassword}");
                 if (PasswordChanged != null) PasswordChanged("Пароль змінено успішно!");
                 return true;
             }
             else
             {
                 if (PasswordChanged != null) PasswordChanged("Пароль має бути з 4 чисел!");
-                EmailSender("yourbank25@gmail.com", hashing.Decrypt("asdXuw/7xlkwpp94ACleFUAHh2xr6yWteDegYQaXZl4="), "Безпека!!!", $"Ваш пароль намагалися змінити, " +
-                    $"якщо це не ви, то замініть пароль на новий", Email);
+                EmailSender("Безпека!!!", "Ваш пароль намагалися змінити, якщо це не ви, то замініть пароль на новий");
                 return false;
             }
         }
