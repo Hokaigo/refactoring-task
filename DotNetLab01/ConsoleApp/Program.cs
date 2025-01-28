@@ -8,9 +8,23 @@ using System.Net;
 using System.Diagnostics;
 using System.IO;
 using Microsoft.Extensions.Configuration;
+using System.Runtime;
 
 namespace ConsoleApp
 {
+    public enum Operation
+    {
+        CheckBalance = 1,
+        Deposit,
+        Withdraw,
+        CheckCredit,
+        TakeCredit,
+        PayCredit,
+        Transfer,
+        ChangePassword,
+        Exit
+    }
+
     internal class Program
     {
         static void Main(string[] args)
@@ -18,17 +32,88 @@ namespace ConsoleApp
             Console.OutputEncoding = Encoding.Unicode;
             Console.InputEncoding = Encoding.Unicode;
 
-            var configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build();
+            var configuration = LoadConfiguration();
+            string connectionString = GetConnectionString(configuration);
+            DataBase db = new DataBase(connectionString, configuration);
+
+            Bank bank = InitializeBank(db);
+
+            AutomatedTellerMachine selectedATM = SelectATM(bank);
+
+            Account neededAccount = SelectAccount(bank);
+
+            PerformOperations(neededAccount, selectedATM, db, bank);
+        }
+
+        private static string GetConnectionString(IConfiguration configuration)
+        {
+            string serverAddress = configuration["DbSettings:ServerAddress"];
+            string databaseName = configuration["DbSettings:DatabaseName"];
+            string userId = configuration["DbSettings:UserId"];
+            string encryptedPassword = configuration["DbSettings:EncryptedPassword"];
+
             string key = configuration["Encryption:Key"];
             string iv = configuration["Encryption:IV"];
             byte[] keyBytes = Convert.FromBase64String(key);
             byte[] ivBytes = Convert.FromBase64String(iv);
 
             Hashing hashing = new Hashing(keyBytes, ivBytes);
+            string decryptedPassword = hashing.Decrypt(encryptedPassword);
 
-            string connectionString = $"Data Source=192.168.43.82,41433;Initial Catalog=ATMbd;User ID=sa;Password={hashing.Decrypt("IqsscPTuJIcGHlyH8yUxCQ==")};";
-            DataBase db = new DataBase(connectionString, configuration);
+            return $"Data Source={serverAddress};Initial Catalog={databaseName};User ID={userId};Password={decryptedPassword};";
+        }
 
+        private static AutomatedTellerMachine SelectATM(Bank bank)
+        {
+            AutomatedTellerMachine selectedATM = null;
+            do
+            {
+                ShowAtmMenu(bank);
+                int atmID = GetValidInput("Введіть номер банкомату:", input => bank.FindATM(input) != null, "Здається ви неправильно ввели номер банкомату, спробуйте ще раз!");
+                selectedATM = bank.FindATM(atmID);
+            } while (selectedATM == null);
+
+            return selectedATM;
+        }
+        private static Account SelectAccount(Bank bank)
+        {
+            Account neededAccount = null;
+            do
+            {
+                Console.WriteLine("Введіть номер картки:");
+                string cardNumber = Console.ReadLine();
+                neededAccount = bank.FindAccount(cardNumber);
+                if (neededAccount == null)
+                {
+                    Console.WriteLine("Невірний номер картки. Спробуйте ще раз.");
+                }
+            } while (neededAccount == null);
+            return neededAccount;
+        }
+
+        private static int GetValidInput(string queryText, Predicate<int> validation, string errorMsg)
+        {
+            int result;
+            do
+            {
+                Console.WriteLine(queryText);
+                string input = Console.ReadLine();
+                if (int.TryParse(input, out result) && validation(result))
+                    break;
+                else
+                    Console.WriteLine(errorMsg);
+            } while (true);
+
+            return result;
+        }
+
+        private static IConfiguration LoadConfiguration()
+        {
+            return new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build();
+        }
+
+        private static Bank InitializeBank(DataBase db)
+        {
             List<Account> accountsFromDB = db.GetAccounts("dbo.Account");
             List<AutomatedTellerMachine> ATMsFromDB = db.GetATM("dbo.ATM");
             Bank bank = new Bank("CringeBank");
@@ -47,7 +132,7 @@ namespace ConsoleApp
                 bank.AddATM(atm);
             }
 
-            for(int i = 0; i < bank.ATMs.Count; i++) 
+            for (int i = 0; i < bank.ATMs.Count; i++)
             {
                 bank.ATMs[i].Withdrawn += Show_Message;
             }
@@ -63,7 +148,7 @@ namespace ConsoleApp
                 bank.Accounts[i].PasswordChanged += Show_Message;
             }
 
-            for(int i = 0; i < bank.Accounts.Count; i++)
+            for (int i = 0; i < bank.Accounts.Count; i++)
             {
                 if (bank.Accounts[i].CreditDate != null)
                 {
@@ -71,254 +156,179 @@ namespace ConsoleApp
                 }
             }
 
-            AutomatedTellerMachine selectedATM = null;
+            return bank;
+        }
+
+
+        private static void PerformOperations(Account neededAccount, AutomatedTellerMachine selectedATM, DataBase db, Bank bank)
+        {
+            string password;
             do
             {
-                ShowAtmMenu(bank);
-                int atmID;
-                while (true)
+                Console.WriteLine("Введіть пін-код:");
+                password = Console.ReadLine();
+                neededAccount.Validation(password);
+            } while (!neededAccount.Entered);
+
+            while (true)
+            {
+                MenuDisplayer.ShowMenu();
+                int option = GetValidInput("Оберіть опцію операції:", input => Enum.IsDefined(typeof(Operation), input), "Такої опції не існує");
+
+                switch ((Operation)option)
                 {
-                    string input = Console.ReadLine();
-                    if (int.TryParse(input, out atmID))
-                    {
-                        selectedATM = bank.FindATM(atmID);
-                        if (selectedATM == null) Console.WriteLine("Здається ви неправильно ввели номер банкомату, спробуйте ще раз!");
+                    case Operation.CheckBalance:
+                        int balance = neededAccount.CurrentBalanceCheck;
                         break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Здається ви неправильно ввели номер банкомату, спробуйте ще раз!");
-                        ShowAtmMenu(bank);
-                    }
+                    case Operation.Deposit:
+                        DepositFunds(neededAccount, selectedATM, db);
+                        break;
+                    case Operation.Withdraw:
+                        WithdrawFunds(neededAccount, selectedATM, db);
+                        break;
+                    case Operation.CheckCredit:
+                        neededAccount.CreditCheck();
+                        break;
+                    case Operation.TakeCredit:
+                        TakeCredit(neededAccount, selectedATM, db);
+                        break;
+                    case Operation.PayCredit:
+                        PayCredit(neededAccount, selectedATM, db);
+                        break;
+                    case Operation.Transfer:
+                        TransferFunds(neededAccount, bank, db);
+                        break;
+                    case Operation.ChangePassword:
+                        ChangePassword(neededAccount, db);
+                        break;
+                    case Operation.Exit:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("Такої опції не існує!");
+                        break;
                 }
             }
-            while (selectedATM == null);
+        }
 
-            Account neededAccount = null;
-            string cardNumber;
-            do
-            {
-                Console.WriteLine("Введіть номер картки:");
-                cardNumber = Console.ReadLine();
-                neededAccount = bank.FindAccount(cardNumber);
-                if (neededAccount == null) Console.WriteLine("Здається ви неправильно ввели номер карти, спробуйте ще раз!");
-            }
-            while (neededAccount == null);
+        private static void UpdateBalance(DataBase db, string accountTable, string atmTable, Account account, AutomatedTellerMachine atm)
+        {
+            db.SetBalance(accountTable, account.CardNumber, account.Balance);
+            db.SetATMBalance(atmTable, atm.ID, atm.ATMBalance);
+        }
 
-            if (neededAccount != null)
+
+        private static void DepositFunds(Account neededAccount, AutomatedTellerMachine selectedATM, DataBase db)
+        {
+            int putCash = GetValidInput("Введіть суму поповнення: ", input => input > 0,
+                "Сума поповнення має бути цілим числом та більше за нуль!");
+
+            neededAccount.Put(putCash);
+            selectedATM.PutCashATM(putCash);
+
+            UpdateBalance(db, "dbo.Account", "dbo.ATM", neededAccount, selectedATM);
+        }
+
+        private static void WithdrawFunds(Account neededAccount, AutomatedTellerMachine selectedATM, DataBase db)
+        {
+            int withdrawCash = GetValidInput("Введіть суму, яку хочете зняти: ", input => input > 0, 
+                "Сума виводу має бути цілим числом та більше за нуль!");
+
+            if (selectedATM.WithdrawATM(withdrawCash))
             {
-                string password;
-                do
+                if (neededAccount.Withdraw(withdrawCash))
                 {
-                    Console.WriteLine("Введіть пін-код:");
-                    password = Console.ReadLine();
-                    neededAccount.Validation(password);
-
-                    if (neededAccount.Entered == true)
-                    {
-                        while (true)
-                        {
-                            ShowMenu();
-                            int option;
-
-                            while (true)
-                            {
-                                string inputOption = Console.ReadLine();
-                                if (int.TryParse(inputOption, out option))
-                                {
-                                    break;
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Такої опції не існує!");
-                                    ShowMenu();
-                                }
-                            }
-
-                            switch (option)
-                            {
-                                case 1:
-                                     int balance = neededAccount.CurrentBalanceCheck;
-                                    break;
-                                case 2:
-                                    Console.WriteLine("Введіть суму для поповнення: ");
-                                    int putCash;
-                                    while (true)
-                                    {
-                                        string input = Console.ReadLine();
-                                        if (int.TryParse(input, out putCash) && putCash > 0)
-                                        {
-                                            neededAccount.Put(putCash);
-                                            db.SetBalance("dbo.Account", neededAccount.CardNumber, neededAccount.Balance);
-                                            selectedATM.PutCashATM(putCash);
-                                            db.SetATMBalance("dbo.ATM", selectedATM.ID, selectedATM.ATMBalance);
-                                            break;
-                                        }
-                                        else
-                                        {
-                                            Console.WriteLine("Сума поповнення має бути цілим числом та більше за нуль!");
-                                        }
-                                    }
-                                    break;
-                                case 3:
-                                    Console.WriteLine("Введіть суму, яку хочете зняти: ");
-                                    int withdrawCash;
-                                    while (true)
-                                    {
-                                        string input = Console.ReadLine();
-                                        if (int.TryParse(input, out withdrawCash) && withdrawCash > 0)
-                                        {
-                                            if (selectedATM.WithdrawATM(withdrawCash))
-                                            {
-                                                if (neededAccount.Withdraw(withdrawCash))
-                                                {
-                                                    db.SetBalance("dbo.Account", neededAccount.CardNumber, neededAccount.Balance);
-                                                    db.SetATMBalance("dbo.ATM", selectedATM.ID, selectedATM.ATMBalance);
-                                                    break;
-                                                }
-                                                else
-                                                {
-                                                    selectedATM.PutCashATM(withdrawCash);
-                                                    db.SetATMBalance("dbo.ATM", selectedATM.ID, selectedATM.ATMBalance);
-                                                    break;
-                                                }
-                                            }
-                                            else
-                                            {
-                                                break;
-                                            }
-                                        }
-                                        else
-                                        {
-                                            Console.WriteLine("Сума виводу має бути цілим числом та більше за нуль!");
-                                        }
-                                    }
-                                    break;
-                                case 4:
-                                    neededAccount.CreditCheck();
-                                    break;
-                                case 5:
-                                    if (neededAccount.CreditCash <= 0)
-                                    {
-                                        Console.WriteLine("Введіть суму кредиту від 1000 до 15000: ");
-                                        int creditCash;
-                                        while (true)
-                                        {
-                                            string input = Console.ReadLine();
-                                            if (int.TryParse(input, out creditCash) && creditCash >= 1000 && creditCash <= 15000)
-                                            {
-                                                neededAccount.TakeAnATMCredit(creditCash, selectedATM);
-                                                DateTime gotCreditDate = DateTime.Now;
-                                                db.SetDate("dbo.Account", neededAccount.CardNumber, gotCreditDate);
-                                                db.SetBalance("dbo.Account", neededAccount.CardNumber, neededAccount.Balance);
-                                                db.SetCreditCash("dbo.Account", neededAccount.CardNumber, neededAccount.CreditCash);
-                                                db.SetATMBalance("dbo.ATM", selectedATM.ID, selectedATM.ATMBalance);
-                                                break;
-                                            }
-                                            else
-                                            {
-                                                Console.WriteLine("Сума кредиту має бути цілим числом та від 1000 до 15000!");
-                                            }
-                                        }
-                                    }
-                                    else 
-                                    {
-                                        Console.WriteLine("Ви не можете взяти кредит, сплатіть попередній кредит!");
-                                    }
-                                    break;
-                                case 6:
-                                    if (neededAccount.CreditCash > 0)
-                                    {
-                                        Console.WriteLine("Введіть суму для погашення кредиту: ");
-                                        int payCreditCash;
-                                        while (true)
-                                        {
-                                            string input = Console.ReadLine();
-                                            if (int.TryParse(input, out payCreditCash) && payCreditCash > 0)
-                                            {
-                                                neededAccount.PayCredit(payCreditCash, selectedATM, db, neededAccount);
-                                                db.SetBalance("dbo.Account", neededAccount.CardNumber, neededAccount.Balance);
-                                                db.SetCreditCash("dbo.Account", neededAccount.CardNumber, neededAccount.CreditCash);
-                                                db.SetATMBalance("dbo.ATM", selectedATM.ID, selectedATM.ATMBalance);
-                                                break;
-                                            }
-                                            else
-                                            {
-                                                Console.WriteLine("Сума погашення кредиту має бути цілим числом та більше за 0!");
-                                            }
-                                        }
-                                    }
-                                    else 
-                                    {
-                                        Console.WriteLine("Наразі у вас немає активного кредиту!");
-                                    }
-                                    break;
-                                case 7:
-                                    Console.WriteLine("Введіть номер картки отримувача: ");
-                                    while (true)
-                                    {
-                                        string getter = Console.ReadLine();
-                                        Account getterAccount = bank.FindAccount(getter);
-
-                                        if (getterAccount != null && getterAccount != neededAccount)
-                                        {
-                                            Console.WriteLine("Введіть суму для переказу: ");
-                                            int transferCash;
-                                            while (true)
-                                            {
-                                                string input2 = Console.ReadLine();
-                                                if (int.TryParse(input2, out transferCash) && transferCash > 0)
-                                                {
-                                                    neededAccount.Transfer(getterAccount, transferCash);
-                                                    db.SetBalance("dbo.Account", neededAccount.CardNumber, neededAccount.Balance);
-                                                    db.SetBalance("dbo.Account", getterAccount.CardNumber, getterAccount.Balance);
-                                                    break;
-                                                }
-                                                else
-                                                {
-                                                    Console.WriteLine("Сума переказу має бути цілим числом та більше за 0!");
-                                                }
-                                            }
-                                            break;
-                                        }
-                                        else if (getterAccount == neededAccount)
-                                        {
-                                            Console.WriteLine("Ви не можете відправити кошти на свою ж картку!");
-                                            Console.WriteLine("Введіть номер картки отримувача: ");
-                                        }
-                                        else
-                                        {
-                                            Console.WriteLine("Картка отримувача не знайдена, спробуйте ще раз!");
-                                            Console.WriteLine("Введіть номер картки отримувача: ");
-                                        }
-                                    }
-                                    break;
-                                case 8:
-                                    Console.WriteLine("Введіть новий пароль з 4-ьох цифр:");
-                                    string newPassword;
-                                    while (true)
-                                    {
-                                        newPassword = Console.ReadLine();
-                                        if(neededAccount.ChangePassword(newPassword, db, neededAccount))
-                                        {
-                                            break;
-                                        }
-                                    }
-                                    break;
-                                case 9:
-                                    Process.Start(Process.GetCurrentProcess().MainModule.FileName);
-                                    Environment.Exit(0);
-                                    break;
-                                default:
-                                    Console.WriteLine("Такої опції не існує!");
-                                    break;
-                            }
-                        }
-                    }
+                    UpdateBalance(db, "dbo.Account", "dbo.ATM", neededAccount, selectedATM);
                 }
-                while (neededAccount.Entered != true);
+                else
+                {
+                    selectedATM.PutCashATM(withdrawCash);
+                    db.SetATMBalance("dbo.ATM", selectedATM.ID, selectedATM.ATMBalance);
+                }
             }
-            Console.ReadLine();
+        }
+
+        private static void TakeCredit(Account neededAccount, AutomatedTellerMachine selectedATM, DataBase db)
+        {
+            if (neededAccount.CreditCash <= 0)
+            {
+                const int minThresholdCredit = 1000;
+                const int maxThresholdCredit = 15000;
+
+                int creditCash = GetValidInput("Введіть суму кредиту від 1000 до 15000: ", input => input >= minThresholdCredit && input <= maxThresholdCredit,
+                    "Сума кредиту має бути цілим числом та від 1000 до 15000!");
+
+                neededAccount.TakeAnATMCredit(creditCash, selectedATM);
+                DateTime gotCreditDate = DateTime.Now;
+                db.SetDate("dbo.Account", neededAccount.CardNumber, gotCreditDate);
+                db.SetCreditCash("dbo.Account", neededAccount.CardNumber, neededAccount.CreditCash);
+                UpdateBalance(db, "dbo.Account", "dbo.ATM", neededAccount, selectedATM);
+            }
+            else
+                Console.WriteLine("Ви не можете взяти кредит, сплатіть попередній кредит!");
+        }
+
+        private static void PayCredit(Account neededAccount, AutomatedTellerMachine selectedATM, DataBase db)
+        {
+            if (neededAccount.CreditCash > 0)
+            {
+                int payCreditCash = GetValidInput("Введіть суму для погашення кредиту: ", input => input > 0,
+                    "Сума погашення кредиту має бути цілим числом та більше за 0!");
+
+                neededAccount.PayCredit(payCreditCash, selectedATM, db, neededAccount);
+                db.SetCreditCash("dbo.Account", neededAccount.CardNumber, neededAccount.CreditCash);
+                UpdateBalance(db, "dbo.Account", "dbo.ATM", neededAccount, selectedATM);
+            }
+            else
+                Console.WriteLine("Наразі у вас немає активного кредиту!");
+        }
+
+        private static void TransferFunds(Account senderAccount, Bank bank, DataBase db)
+        {
+            while (true)
+            {
+                Console.WriteLine("Введіть номер картки отримувача: ");
+                string getterCardNumber = Console.ReadLine();
+                Account getterAccount = bank.FindAccount(getterCardNumber);
+
+                if (getterAccount != null && getterAccount != senderAccount)
+                {
+                    int transferAmount = GetValidInput("Введіть суму для переказу: ", input => input > 0 && input <= senderAccount.Balance,
+                        "Сума переказу має бути цілим числом, більше нуля і не перевищувати ваш баланс!"
+                    );
+
+                    senderAccount.Withdraw(transferAmount);
+                    getterAccount.Put(transferAmount);
+
+                    db.SetBalance("dbo.Account", senderAccount.CardNumber, senderAccount.Balance);
+                    db.SetBalance("dbo.Account", getterAccount.CardNumber, getterAccount.Balance);
+
+                    Console.WriteLine("Переказ успішно здійснено!");
+                    break;
+                }
+                else if (getterAccount == senderAccount)
+                {
+                    Console.WriteLine("Ви не можете відправити кошти на свою ж картку!");
+                }
+                else
+                {
+                    Console.WriteLine("Картка отримувача не знайдена, спробуйте ще раз!");
+                }
+            }
+        }
+
+        private static void ChangePassword(Account neededAccount, DataBase db)
+        {
+            Console.WriteLine("Введіть новий пароль з 4-ьох цифр:");
+            string newPassword;
+            while (true)
+            {
+                newPassword = Console.ReadLine();
+                if (neededAccount.ChangePassword(newPassword, db, neededAccount))
+                {
+                    break;
+                }
+            }
         }
 
         private static void Show_Message(string message)
@@ -326,27 +336,13 @@ namespace ConsoleApp
             Console.WriteLine(message);
         }
 
-        private static void ShowMenu()
-        {
-            Console.WriteLine("Оберіть операцію:");
-            Console.WriteLine("1. - Перевірити баланс.");
-            Console.WriteLine("2. - Поповнити баланс.");
-            Console.WriteLine("3. - Зняти кошти.");
-            Console.WriteLine("4. - Перевірити наявність кредитних коштів.");
-            Console.WriteLine("5. - Взяти кредит.");
-            Console.WriteLine("6. - Погасити кредит.");
-            Console.WriteLine("7. - Переказ за номером картки.");
-            Console.WriteLine("8. - Змінити пароль.");
-            Console.WriteLine("9. - Вихід у меню.");
-        }
-
         private static void ShowAtmMenu(Bank bank)
         {
-            Console.WriteLine("Оберіть банкомат, для здійснення операцій:");
-            Console.WriteLine($"1. - Банкомат за адресою {bank.ATMs[0].Address}");
-            Console.WriteLine($"2. - Банкомат за адресою {bank.ATMs[1].Address}");
-            Console.WriteLine($"3. - Банкомат за адресою {bank.ATMs[2].Address}");
-            Console.WriteLine("Введіть номер банкомату:");
+            Console.WriteLine("Оберіть банкомат для здійснення операцій:");
+            for (int i = 0; i < bank.ATMs.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. - Банкомат за адресою {bank.ATMs[i].Address}");
+            }
         }
     }
 }
