@@ -1,0 +1,334 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\refactoring\\DotNetLab01\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{388C1A4A-10FE-4A66-9BAE-7EF9BB5B9E3F}|ConsoleApp\\ConsoleApp.csproj|d:\\refactoring\\dotnetlab01\\consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{388C1A4A-10FE-4A66-9BAE-7EF9BB5B9E3F}|ConsoleApp\\ConsoleApp.csproj|solutionrelative:consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|D:\\refactoring\\DotNetLab01\\classlibrary\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|solutionrelative:classlibrary\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|D:\\refactoring\\DotNetLab01\\classlibrary\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|solutionrelative:classlibrary\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|D:\\refactoring\\DotNetLab01\\classlibrary\\automatedtellermachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|solutionrelative:classlibrary\\automatedtellermachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|D:\\refactoring\\DotNetLab01\\classlibrary\\hashing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|solutionrelative:classlibrary\\hashing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|D:\\refactoring\\DotNetLab01\\classlibrary\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|solutionrelative:classlibrary\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4216A0E-36CA-46D7-BB28-273C61962A1A}|EncryptionTest\\EncryptionTest.csproj|D:\\refactoring\\DotNetLab01\\encryptiontest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4216A0E-36CA-46D7-BB28-273C61962A1A}|EncryptionTest\\EncryptionTest.csproj|solutionrelative:encryptiontest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|D:\\refactoring\\DotNetLab01\\wpfapp\\menu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\menu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|D:\\refactoring\\DotNetLab01\\wpfapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|D:\\refactoring\\DotNetLab01\\wpfapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|D:\\refactoring\\DotNetLab01\\wpfapp\\balancecheckpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\balancecheckpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|D:\\refactoring\\DotNetLab01\\wpfapp\\paycreditpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\paycreditpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|D:\\refactoring\\DotNetLab01\\wpfapp\\transfercashpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\transfercashpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|D:\\refactoring\\DotNetLab01\\wpfapp\\passwordchangepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\passwordchangepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|D:\\refactoring\\DotNetLab01\\wpfapp\\getcreditpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\getcreditpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|D:\\refactoring\\DotNetLab01\\wpfapp\\creditservicespage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\creditservicespage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|D:\\refactoring\\DotNetLab01\\wpfapp\\withdrawcashpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\withdrawcashpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|D:\\refactoring\\DotNetLab01\\wpfapp\\putcashonbalancepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\putcashonbalancepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|D:\\refactoring\\DotNetLab01\\wpfapp\\creditcheckpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB904AA5-838C-4656-8053-1C005B7B71BA}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\creditcheckpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Account.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Account.cs",
+              "RelativeDocumentMoniker": "ClassLibrary\\Account.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Account.cs",
+              "RelativeToolTip": "ClassLibrary\\Account.cs",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAowNYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T16:48:04.009Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DataBase.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\DataBase.cs",
+              "RelativeDocumentMoniker": "ClassLibrary\\DataBase.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\DataBase.cs",
+              "RelativeToolTip": "ClassLibrary\\DataBase.cs",
+              "ViewState": "AgIAAL4AAAAAAAAAAAAwwOEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T09:24:26.315Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AutomatedTellerMachine.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\AutomatedTellerMachine.cs",
+              "RelativeDocumentMoniker": "ClassLibrary\\AutomatedTellerMachine.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\AutomatedTellerMachine.cs",
+              "RelativeToolTip": "ClassLibrary\\AutomatedTellerMachine.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T10:24:23.396Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Bank.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Bank.cs",
+              "RelativeDocumentMoniker": "ClassLibrary\\Bank.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Bank.cs",
+              "RelativeToolTip": "ClassLibrary\\Bank.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T16:48:05.654Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Hashing.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Hashing.cs",
+              "RelativeDocumentMoniker": "ClassLibrary\\Hashing.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Hashing.cs",
+              "RelativeToolTip": "ClassLibrary\\Hashing.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAowEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T16:48:07.188Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\ConsoleApp\\Program.cs",
+              "RelativeDocumentMoniker": "ConsoleApp\\Program.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\ConsoleApp\\Program.cs",
+              "RelativeToolTip": "ConsoleApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T06:12:55.904Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\WpfApp\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WpfApp\\MainWindow.xaml",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\WpfApp\\MainWindow.xaml",
+              "RelativeToolTip": "WpfApp\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-08T07:11:06.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\EncryptionTest\\Program.cs",
+              "RelativeDocumentMoniker": "EncryptionTest\\Program.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\EncryptionTest\\Program.cs",
+              "RelativeToolTip": "EncryptionTest\\Program.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T17:06:42.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PayCreditPage.xaml.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\WpfApp\\PayCreditPage.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp\\PayCreditPage.xaml.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\WpfApp\\PayCreditPage.xaml.cs",
+              "RelativeToolTip": "WpfApp\\PayCreditPage.xaml.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T16:48:41.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\WpfApp\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\WpfApp\\MainWindow.xaml.cs",
+              "RelativeToolTip": "WpfApp\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAgwFAAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T21:45:54.376Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TransferCashPage.xaml.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\WpfApp\\TransferCashPage.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp\\TransferCashPage.xaml.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\WpfApp\\TransferCashPage.xaml.cs",
+              "RelativeToolTip": "WpfApp\\TransferCashPage.xaml.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T16:48:46.167Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PasswordChangePage.xaml.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\WpfApp\\PasswordChangePage.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp\\PasswordChangePage.xaml.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\WpfApp\\PasswordChangePage.xaml.cs",
+              "RelativeToolTip": "WpfApp\\PasswordChangePage.xaml.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB8AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T16:48:39.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "GetCreditPage.xaml.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\WpfApp\\GetCreditPage.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp\\GetCreditPage.xaml.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\WpfApp\\GetCreditPage.xaml.cs",
+              "RelativeToolTip": "WpfApp\\GetCreditPage.xaml.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAACYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T16:48:33.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CreditServicesPage.xaml.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\WpfApp\\CreditServicesPage.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp\\CreditServicesPage.xaml.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\WpfApp\\CreditServicesPage.xaml.cs",
+              "RelativeToolTip": "WpfApp\\CreditServicesPage.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T12:59:35.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "WithdrawCashPage.xaml.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\WpfApp\\WithdrawCashPage.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp\\WithdrawCashPage.xaml.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\WpfApp\\WithdrawCashPage.xaml.cs",
+              "RelativeToolTip": "WpfApp\\WithdrawCashPage.xaml.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T12:34:04.251Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PutCashOnBalancePage.xaml.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\WpfApp\\PutCashOnBalancePage.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp\\PutCashOnBalancePage.xaml.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\WpfApp\\PutCashOnBalancePage.xaml.cs",
+              "RelativeToolTip": "WpfApp\\PutCashOnBalancePage.xaml.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAgwCgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T11:18:03.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CreditCheckPage.xaml.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\WpfApp\\CreditCheckPage.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp\\CreditCheckPage.xaml.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\WpfApp\\CreditCheckPage.xaml.cs",
+              "RelativeToolTip": "WpfApp\\CreditCheckPage.xaml.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T16:48:31.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BalanceCheckPage.xaml.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\WpfApp\\BalanceCheckPage.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp\\BalanceCheckPage.xaml.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\WpfApp\\BalanceCheckPage.xaml.cs",
+              "RelativeToolTip": "WpfApp\\BalanceCheckPage.xaml.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T10:44:07.629Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Menu.xaml.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\WpfApp\\Menu.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp\\Menu.xaml.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\WpfApp\\Menu.xaml.cs",
+              "RelativeToolTip": "WpfApp\\Menu.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T10:29:21.993Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
