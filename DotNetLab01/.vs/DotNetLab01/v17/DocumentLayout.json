@@ -3,28 +3,32 @@
   "WorkspaceRootPath": "D:\\refactoring\\DotNetLab01\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{388C1A4A-10FE-4A66-9BAE-7EF9BB5B9E3F}|ConsoleApp\\ConsoleApp.csproj|d:\\refactoring\\dotnetlab01\\consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{388C1A4A-10FE-4A66-9BAE-7EF9BB5B9E3F}|ConsoleApp\\ConsoleApp.csproj|solutionrelative:consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|D:\\refactoring\\DotNetLab01\\classlibrary\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|solutionrelative:classlibrary\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|D:\\refactoring\\DotNetLab01\\classlibrary\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|solutionrelative:classlibrary\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|D:\\refactoring\\DotNetLab01\\classlibrary\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|solutionrelative:classlibrary\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|D:\\refactoring\\DotNetLab01\\classlibrary\\automatedtellermachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|solutionrelative:classlibrary\\automatedtellermachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{388C1A4A-10FE-4A66-9BAE-7EF9BB5B9E3F}|ConsoleApp\\ConsoleApp.csproj|d:\\refactoring\\dotnetlab01\\consoleapp\\menudisplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{388C1A4A-10FE-4A66-9BAE-7EF9BB5B9E3F}|ConsoleApp\\ConsoleApp.csproj|solutionrelative:consoleapp\\menudisplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|D:\\refactoring\\DotNetLab01\\classlibrary\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|solutionrelative:classlibrary\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|D:\\refactoring\\DotNetLab01\\classlibrary\\hashing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|solutionrelative:classlibrary\\hashing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|D:\\refactoring\\DotNetLab01\\classlibrary\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|solutionrelative:classlibrary\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{388C1A4A-10FE-4A66-9BAE-7EF9BB5B9E3F}|ConsoleApp\\ConsoleApp.csproj|d:\\refactoring\\dotnetlab01\\consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{388C1A4A-10FE-4A66-9BAE-7EF9BB5B9E3F}|ConsoleApp\\ConsoleApp.csproj|solutionrelative:consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,20 +38,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Account.cs",
               "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Account.cs",
               "RelativeDocumentMoniker": "ClassLibrary\\Account.cs",
               "ToolTip": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Account.cs",
               "RelativeToolTip": "ClassLibrary\\Account.cs",
-              "ViewState": "AgIAAK4AAAAAAAAAAAAowNYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAiwNEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-07T16:48:04.009Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -57,59 +62,63 @@
               "RelativeDocumentMoniker": "ClassLibrary\\DataBase.cs",
               "ToolTip": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\DataBase.cs",
               "RelativeToolTip": "ClassLibrary\\DataBase.cs",
-              "ViewState": "AgIAAL4AAAAAAAAAAAAwwOEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAALkAAAAAAAAAAAAmwMgAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-12T09:24:26.315Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "AutomatedTellerMachine.cs",
               "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\AutomatedTellerMachine.cs",
               "RelativeDocumentMoniker": "ClassLibrary\\AutomatedTellerMachine.cs",
               "ToolTip": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\AutomatedTellerMachine.cs",
               "RelativeToolTip": "ClassLibrary\\AutomatedTellerMachine.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowC4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAwwB8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T10:24:23.396Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Bank.cs",
               "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Bank.cs",
               "RelativeDocumentMoniker": "ClassLibrary\\Bank.cs",
               "ToolTip": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Bank.cs",
               "RelativeToolTip": "ClassLibrary\\Bank.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAQwDoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAmwDoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-07T16:48:05.654Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Hashing.cs",
               "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Hashing.cs",
               "RelativeDocumentMoniker": "ClassLibrary\\Hashing.cs",
               "ToolTip": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Hashing.cs",
               "RelativeToolTip": "ClassLibrary\\Hashing.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAowEQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-07T16:48:07.188Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\ConsoleApp\\Program.cs",
               "RelativeDocumentMoniker": "ConsoleApp\\Program.cs",
               "ToolTip": "D:\\refactoring\\DotNetLab01\\ConsoleApp\\Program.cs",
               "RelativeToolTip": "ConsoleApp\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwCoAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T06:12:55.904Z",
               "IsPinned": true,
@@ -118,6 +127,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MenuDisplayer.cs",
+              "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\ConsoleApp\\MenuDisplayer.cs",
+              "RelativeDocumentMoniker": "ConsoleApp\\MenuDisplayer.cs",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\ConsoleApp\\MenuDisplayer.cs",
+              "RelativeToolTip": "ConsoleApp\\MenuDisplayer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T19:34:51.35Z",
+              "EditorCaption": ""
             }
           ]
         }
