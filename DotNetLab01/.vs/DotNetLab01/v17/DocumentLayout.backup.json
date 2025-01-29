@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\refactoring\\DotNetLab01\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|d:\\refactoring\\dotnetlab01\\classlibrary\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|solutionrelative:classlibrary\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|D:\\refactoring\\DotNetLab01\\classlibrary\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|solutionrelative:classlibrary\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|D:\\refactoring\\DotNetLab01\\classlibrary\\hashing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,7 +15,11 @@
       "RelativeMoniker": "D:0:0:{388C1A4A-10FE-4A66-9BAE-7EF9BB5B9E3F}|ConsoleApp\\ConsoleApp.csproj|solutionrelative:consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{388C1A4A-10FE-4A66-9BAE-7EF9BB5B9E3F}|ConsoleApp\\ConsoleApp.csproj|d:\\refactoring\\dotnetlab01\\consoleapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|d:\\refactoring\\dotnetlab01\\classlibrary\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|solutionrelative:classlibrary\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{388C1A4A-10FE-4A66-9BAE-7EF9BB5B9E3F}|ConsoleApp\\ConsoleApp.csproj|D:\\refactoring\\DotNetLab01\\consoleapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{388C1A4A-10FE-4A66-9BAE-7EF9BB5B9E3F}|ConsoleApp\\ConsoleApp.csproj|solutionrelative:consoleapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
@@ -29,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|D:\\refactoring\\DotNetLab01\\classlibrary\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|solutionrelative:classlibrary\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|D:\\refactoring\\DotNetLab01\\classlibrary\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{449EEFFB-4AA0-4CBE-A0F8-2CA075131F96}|ClassLibrary\\ClassLibrary.csproj|solutionrelative:classlibrary\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,17 +42,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Account.cs",
               "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Account.cs",
               "RelativeDocumentMoniker": "ClassLibrary\\Account.cs",
-              "ToolTip": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Account.cs*",
-              "RelativeToolTip": "ClassLibrary\\Account.cs*",
-              "ViewState": "AgIAAKkAAAAAAAAAAAAYwLYAAAAyAAAAAAAAAA==",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Account.cs",
+              "RelativeToolTip": "ClassLibrary\\Account.cs",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAowL0AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-07T16:48:04.009Z",
               "IsPinned": true,
@@ -60,7 +60,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "DataBase.cs",
               "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\DataBase.cs",
               "RelativeDocumentMoniker": "ClassLibrary\\DataBase.cs",
@@ -69,12 +69,11 @@
               "ViewState": "AgIAAA4AAAAAAAAAAAAqwB4AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-12T09:24:26.315Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AutomatedTellerMachine.cs",
               "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\AutomatedTellerMachine.cs",
               "RelativeDocumentMoniker": "ClassLibrary\\AutomatedTellerMachine.cs",
@@ -83,21 +82,21 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T10:24:23.396Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "Bank.cs",
               "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Bank.cs",
               "RelativeDocumentMoniker": "ClassLibrary\\Bank.cs",
-              "ToolTip": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Bank.cs",
-              "RelativeToolTip": "ClassLibrary\\Bank.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAmwDoAAAAAAAAAAAAAAA==",
+              "ToolTip": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Bank.cs*",
+              "RelativeToolTip": "ClassLibrary\\Bank.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-07T16:48:05.654Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -107,7 +106,7 @@
               "RelativeDocumentMoniker": "ClassLibrary\\Hashing.cs",
               "ToolTip": "D:\\refactoring\\DotNetLab01\\ClassLibrary\\Hashing.cs",
               "RelativeToolTip": "ClassLibrary\\Hashing.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowEQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowEQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-07T16:48:07.188Z",
               "IsPinned": true,
@@ -133,7 +132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\ConsoleApp\\appsettings.json",
               "RelativeDocumentMoniker": "ConsoleApp\\appsettings.json",
@@ -141,12 +140,11 @@
               "RelativeToolTip": "ConsoleApp\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-28T22:35:01.116Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T22:35:01.116Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "MenuDisplayer.cs",
               "DocumentMoniker": "D:\\refactoring\\DotNetLab01\\ConsoleApp\\MenuDisplayer.cs",
               "RelativeDocumentMoniker": "ConsoleApp\\MenuDisplayer.cs",
@@ -154,8 +152,7 @@
               "RelativeToolTip": "ConsoleApp\\MenuDisplayer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T19:34:51.35Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T19:34:51.35Z"
             }
           ]
         }
