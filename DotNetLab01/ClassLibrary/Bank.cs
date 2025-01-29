@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
-using static ClassLibrary.Account;
 
 namespace ClassLibrary
 {
@@ -23,36 +19,30 @@ namespace ClassLibrary
 
         public void AddATM(AutomatedTellerMachine atm)
         {
+            if (atm == null)
+                throw new ArgumentNullException("Назва банкомату не може бути null!");
+
             ATMs.Add(atm);
         }
 
         public void AddAccount(Account account)
         {
+            if (account == null)
+                throw new ArgumentNullException("Назва аккаунту не може бути null!");
+
             Accounts.Add(account);
         }
 
+        private T FindItem<T>(List<T> items, Predicate<T> predicate) => items.FirstOrDefault(item => predicate(item));
+
         public Account FindAccount(string cardNumber)
         {
-            for (int i = 0; i < Accounts.Count; i++)
-            {
-                if (Accounts[i].CardNumber == cardNumber)
-                {
-                    return Accounts[i];
-                }
-            }
-            return null;
+            return FindItem(Accounts, account => account.CardNumber == cardNumber);
         }
 
         public AutomatedTellerMachine FindATM(int id)
         {
-            for (int i = 0; i < ATMs.Count; i++)
-            {
-                if (ATMs[i].ID == id)
-                {
-                    return ATMs[i];
-                }
-            }
-            return null;
+            return FindItem(ATMs, atm => atm.ID == id);
         }
     }
 }
